@@ -1,21 +1,9 @@
 [
     {
-        "Priority": 4000,
-        "Name": "TEMP_AllowDatagateway",
-        "Description": "temporary rule for management purposes",
-        "SourceAddressPrefix": "10.100.10.10",
-        "SourcePortRange": "*",
-        "DestinationAddressPrefix": "*",
-        "DestinationPortRange": "*",
-        "Protocol": "*",
-        "Access": "Allow"
-    },
-
-    {
         "Priority": 4093,
         "Name": "AllowBastionRDPInbound",
         "Description": "Allow RDP traffic from Bastion subnet",
-        "SourceAddressPrefix": "10.100.1.128/26",
+        "SourceAddressPrefix": "192.168.10.0/24",
         "SourcePortRange": "*",
         "DestinationAddressPrefix": "*",
         "DestinationPortRange": "3389",
@@ -27,7 +15,7 @@
         "Priority": 4094,
         "Name": "AllowMgtSubnetAllInbound",
         "Description": "Allow all traffic from Management subnet",
-        "SourceAddressPrefix": "10.100.2.0/24",
+        "SourceAddressPrefix": "192.686.1.0/24",
         "SourcePortRange": "*",
         "DestinationAddressPrefix": "*",
         "DestinationPortRange": "*",

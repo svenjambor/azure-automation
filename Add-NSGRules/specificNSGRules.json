@@ -14,36 +14,7 @@
         "Protocol": "TCP",
         "Access": "Allow"
     },
-
-    {
-        "Priority": 101,
-        "Name": "AllowASGsSMBInbound",
-        "Description": "Allow named Application Security Groups to connect on port 445",
-        "SourceApplicationSecurityGroupNames": [
-            "JMB-ASG-AVDFinanceHosts"
-        ],
-        "SourcePortRange": "*",
-        "DestinationAddressPrefix": "*",
-        "DestinationPortRange": "445",
-        "Protocol": "TCP",
-        "Access": "Allow"
-    },
    
-    {
-        "Priority": 102,
-        "Name": "AllowSchiedamSMBInbound",
-        "Description": "Allow include Schiedam networks and Wifi to connect on 445.",
-        "SourceAddressPrefix": [
-            "172.16.96.0/20",
-            "172.18.2.0/24"
-        ],
-        "SourcePortRange": "*",
-        "DestinationAddressPrefix": "*",
-        "DestinationPortRange": "445",
-        "Protocol": "TCP",
-        "Access": "Allow"
-    },
-
     {
         "Priority": 110,
         "Name": "AllowASGScansysServiceDiscoveryInbound",

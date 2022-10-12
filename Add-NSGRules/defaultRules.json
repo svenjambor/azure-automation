@@ -1,0 +1,61 @@
+[
+    {
+        "Priority": 4000,
+        "Name": "TEMP_AllowDatagateway",
+        "Description": "temporary rule for management purposes",
+        "SourceAddressPrefix": "10.100.10.10",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "*",
+        "Protocol": "*",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 4093,
+        "Name": "AllowBastionRDPInbound",
+        "Description": "Allow RDP traffic from Bastion subnet",
+        "SourceAddressPrefix": "10.100.1.128/26",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "3389",
+        "Protocol": "TCP",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 4094,
+        "Name": "AllowMgtSubnetAllInbound",
+        "Description": "Allow all traffic from Management subnet",
+        "SourceAddressPrefix": "10.100.2.0/24",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "*",
+        "Protocol": "*",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 4095,
+        "Name": "AllowAzureLoadBalancerInBound",
+        "Description": "Required for Microsoft Azure management",
+        "SourceAddressPrefix": "AzureLoadBalancer",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "*",
+        "Protocol": "*",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 4096,
+        "Name": "DenyAllInBound",
+        "Description": "Lock down the NSG: Allow only traffic explitely permitted above",
+        "SourceAddressPrefix": "*",
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "*",
+        "Protocol": "*",
+        "Access": "Deny"
+    }
+]

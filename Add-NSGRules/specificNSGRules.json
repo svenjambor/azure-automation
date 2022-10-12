@@ -1,0 +1,60 @@
+[    
+    {
+        "Priority": 100,
+        "Name": "AllowClientSMBInbound",
+        "Description": "Allow client systems to connect on port 445.",
+        "SourceAddressPrefix": [
+            "10.100.15.84",
+            "192.168.182.0/23",
+            "172.16.96.0/20"
+        ],
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "445",
+        "Protocol": "TCP",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 101,
+        "Name": "AllowASGsSMBInbound",
+        "Description": "Allow named Application Security Groups to connect on port 445",
+        "SourceApplicationSecurityGroupNames": [
+            "JMB-ASG-AVDFinanceHosts"
+        ],
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "445",
+        "Protocol": "TCP",
+        "Access": "Allow"
+    },
+   
+    {
+        "Priority": 102,
+        "Name": "AllowSchiedamSMBInbound",
+        "Description": "Allow include Schiedam networks and Wifi to connect on 445.",
+        "SourceAddressPrefix": [
+            "172.16.96.0/20",
+            "172.18.2.0/24"
+        ],
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "445",
+        "Protocol": "TCP",
+        "Access": "Allow"
+    },
+
+    {
+        "Priority": 110,
+        "Name": "AllowASGScansysServiceDiscoveryInbound",
+        "Description": "Allow Scansys host(s) to perform service discovery on port 8020",
+        "SourceApplicationSecurityGroupNames": [
+            "JMB-ASG-ScansysHosts"
+        ],
+        "SourcePortRange": "*",
+        "DestinationAddressPrefix": "*",
+        "DestinationPortRange": "8020",
+        "Protocol": "TCP",
+        "Access": "Allow"
+    }
+]
